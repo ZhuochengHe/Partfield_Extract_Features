@@ -9,6 +9,7 @@ import os, sys
 import numpy as np
 import random
 
+
 def predict(cfg):
     seed_everything(cfg.seed)
 

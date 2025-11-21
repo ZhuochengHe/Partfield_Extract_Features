@@ -1,0 +1,81 @@
+mkdir: cannot create directory ‘/scratch/eecs442f25_class_root/eecs442f25_class/jonzhe/data/objaverse_glbs/batch_10’: No space left on device
+mkdir: cannot create directory ‘/scratch/eecs442f25_class_root/eecs442f25_class/jonzhe/output/partfield_features/batch_10’: No space left on device
+Directories:
+  GLB_DIR     = /scratch/eecs442f25_class_root/eecs442f25_class/jonzhe/data/objaverse_glbs/batch_10
+  FEAT_DIR    = /scratch/eecs442f25_class_root/eecs442f25_class/jonzhe/output/partfield_features/batch_10
+Traceback (most recent call last):
+  File "/home/jonzhe/442/PartField/download.py", line 101, in <module>
+    main()
+  File "/home/jonzhe/442/PartField/download.py", line 42, in main
+    os.makedirs(DOWNLOAD_DIR, exist_ok=True)
+  File "/home/jonzhe/.conda/envs/partfield/lib/python3.10/os.py", line 225, in makedirs
+    mkdir(name, mode)
+OSError: [Errno 28] No space left on device: '/scratch/eecs442f25_class_root/eecs442f25_class/jonzhe/data/objaverse_glbs/batch_10'
+📌 Running PartField inference...
+/home/jonzhe/.conda/envs/partfield/lib/python3.10/site-packages/lightning/fabric/__init__.py:40: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+[rank: 0] Seed set to 0
+Using 16bit Automatic Mixed Precision (AMP)
+/home/jonzhe/.conda/envs/partfield/lib/python3.10/site-packages/lightning/pytorch/plugins/precision/amp.py:55: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+/home/jonzhe/.conda/envs/partfield/lib/python3.10/site-packages/lightning/pytorch/trainer/connectors/logger_connector/logger_connector.py:75: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `lightning.pytorch` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+You are using a CUDA device ('NVIDIA A100 80GB PCIe MIG 3g.40gb') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+[rank: 0] Seed set to 0
+Initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/1
+[W1121 01:27:16.747356767 socket.cpp:697] [c10d] The client socket cannot be initialized to connect to [gl1250.arc-ts.umich.edu]:17987 (errno: 97 - Address family not supported by protocol).
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 1 processes
+----------------------------------------------------------------------------------------------------
+
+Restoring states from the checkpoint path at model/model_objaverse.ckpt
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [MIG-8429cdfb-20f4-5eec-aa2f-3d388896300a]
+Loaded model weights from the checkpoint at model/model_objaverse.ckpt
+SLURM auto-requeueing enabled. Setting signal handlers.
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/jonzhe/442/PartField/partfield_inference.py", line 57, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/jonzhe/442/PartField/partfield_inference.py", line 54, in main
+[rank0]:     predict(cfg)
+[rank0]:   File "/home/jonzhe/442/PartField/partfield_inference.py", line 48, in predict
+[rank0]:     trainer.predict(model, ckpt_path=cfg.continue_ckpt)
+[rank0]:   File "/home/jonzhe/.conda/envs/partfield/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 863, in predict
+[rank0]:     return call._call_and_handle_interrupt(
+[rank0]:   File "/home/jonzhe/.conda/envs/partfield/lib/python3.10/site-packages/lightning/pytorch/trainer/call.py", line 43, in _call_and_handle_interrupt
+[rank0]:     return trainer.strategy.launcher.launch(trainer_fn, *args, trainer=trainer, **kwargs)
+[rank0]:   File "/home/jonzhe/.conda/envs/partfield/lib/python3.10/site-packages/lightning/pytorch/strategies/launchers/subprocess_script.py", line 105, in launch
+[rank0]:     return function(*args, **kwargs)
+[rank0]:   File "/home/jonzhe/.conda/envs/partfield/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 902, in _predict_impl
+[rank0]:     results = self._run(model, ckpt_path=ckpt_path)
+[rank0]:   File "/home/jonzhe/.conda/envs/partfield/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 986, in _run
+[rank0]:     results = self._run_stage()
+[rank0]:   File "/home/jonzhe/.conda/envs/partfield/lib/python3.10/site-packages/lightning/pytorch/trainer/trainer.py", line 1027, in _run_stage
+[rank0]:     return self.predict_loop.run()
+[rank0]:   File "/home/jonzhe/.conda/envs/partfield/lib/python3.10/site-packages/lightning/pytorch/loops/utilities.py", line 182, in _decorator
+[rank0]:     return loop_run(self, *args, **kwargs)
+[rank0]:   File "/home/jonzhe/.conda/envs/partfield/lib/python3.10/site-packages/lightning/pytorch/loops/prediction_loop.py", line 104, in run
+[rank0]:     self.setup_data()
+[rank0]:   File "/home/jonzhe/.conda/envs/partfield/lib/python3.10/site-packages/lightning/pytorch/loops/prediction_loop.py", line 139, in setup_data
+[rank0]:     dataloaders = _request_dataloader(source)
+[rank0]:   File "/home/jonzhe/.conda/envs/partfield/lib/python3.10/site-packages/lightning/pytorch/trainer/connectors/data_connector.py", line 342, in _request_dataloader
+[rank0]:     return data_source.dataloader()
+[rank0]:   File "/home/jonzhe/.conda/envs/partfield/lib/python3.10/site-packages/lightning/pytorch/trainer/connectors/data_connector.py", line 306, in dataloader
+[rank0]:     return call._call_lightning_module_hook(self.instance.trainer, self.name, pl_module=self.instance)
+[rank0]:   File "/home/jonzhe/.conda/envs/partfield/lib/python3.10/site-packages/lightning/pytorch/trainer/call.py", line 157, in _call_lightning_module_hook
+[rank0]:     output = fn(*args, **kwargs)
+[rank0]:   File "/home/jonzhe/442/PartField/partfield/model_trainer_pvcnn_only_demo.py", line 73, in predict_dataloader
+[rank0]:     dataset = Demo_Dataset(self.cfg)
+[rank0]:   File "/home/jonzhe/442/PartField/partfield/dataloader.py", line 70, in __init__
+[rank0]:     all_files = os.listdir(self.data_path)
+[rank0]: FileNotFoundError: [Errno 2] No such file or directory: '/scratch/eecs442f25_class_root/eecs442f25_class/jonzhe/data/objaverse_glbs/batch_10'
+/var/spool/slurmd.spool/job36512987/slurm_script: line 55: cd: /scratch/eecs442f25_class_root/eecs442f25_class/jonzhe/output/partfield_features/batch_10: No such file or directory
+📦 Compressing results in /scratch/eecs442f25_class_root/eecs442f25_class/jonzhe/output/partfield_features/batch_10 ...
+tar: ./*.npy: Cannot stat: No such file or directory
+tar: Exiting with failure status due to previous errors
+📦 Created archive: partfield_batch_10.tar.gz
+🔐 SHA256 saved  : partfield_batch_10.tar.gz.sha256
+🧹 Cleaning original .npy files...
+/var/spool/slurmd.spool/job36512987/slurm_script: line 81: unexpected EOF while looking for matching `"'
+/var/spool/slurmd.spool/job36512987/slurm_script: line 82: syntax error: unexpected end of file

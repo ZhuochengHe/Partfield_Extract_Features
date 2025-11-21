@@ -84,7 +84,7 @@ class Model(pl.LightningModule):
 
     @torch.no_grad()
     def predict_step(self, batch, batch_idx):
-        save_dir = f"exp_results/{self.cfg.result_name}"
+        save_dir = self.cfg.result_name
         os.makedirs(save_dir, exist_ok=True)
 
         uid = batch['uid'][0]
@@ -177,6 +177,64 @@ class Model(pl.LightningModule):
                     face_v_2 = torch.index_select(vertices, 0, faces[:, 2].reshape(-1))
                     points = w0 * face_v_0.unsqueeze(dim=1) + w1 * face_v_1.unsqueeze(dim=1) + w2 * face_v_2.unsqueeze(dim=1)
                     return points
+                
+                def per_face_coord_feat(part_planes, tensor_vertices, n_point_per_face, n_sample_each):
+                    """
+                    Args:
+                        part_planes: triplane feature, shape (1, 3, C, H, W)
+                        tensor_vertices: vertex coordinates, shape (1, N_vertices, 3)
+                        n_point_per_face: 每个面采样的点数
+                        n_sample_each: 每次 slice 采样的顶点数，避免 OOM
+                    Returns:
+                        coord_feat: (N_faces_total, 3 + latent_dim)
+                    """
+                    all_face_feat = []
+                    all_face_coord = []
+
+                    n_v = tensor_vertices.shape[1]
+                    n_sample = n_v // n_sample_each + 1
+
+                    for i_sample in range(n_sample):
+                        # slice 顶点
+                        v_slice = tensor_vertices[:, i_sample * n_sample_each : (i_sample + 1) * n_sample_each, :]
+                        if v_slice.shape[1] == 0:
+                            continue
+
+                        # sample feature
+                        sampled_feature = sample_triplane_feat(part_planes, v_slice)  # (1, n_slice_points, latent_dim)
+                        B, n_points, latent_dim = sampled_feature.shape
+
+                        # reshape 按 n_point_per_face 聚合
+                        n_faces_in_slice = n_points // n_point_per_face
+                        if n_faces_in_slice == 0:
+                            continue
+
+                        sampled_feature = sampled_feature[:, :n_faces_in_slice * n_point_per_face, :]  # trim 多余点
+                        v_slice = v_slice[:, :n_faces_in_slice * n_point_per_face, :]
+
+                        # reshape
+                        sampled_feature = sampled_feature.reshape(B, n_faces_in_slice, n_point_per_face, latent_dim)
+                        v_slice = v_slice.reshape(B, n_faces_in_slice, n_point_per_face, 3)
+
+                        # 求平均
+                        face_feat = sampled_feature.mean(dim=2)  # (B, n_faces_in_slice, latent_dim)
+                        face_coord = v_slice.mean(dim=2)         # (B, n_faces_in_slice, 3)
+
+                        all_face_feat.append(face_feat)
+                        all_face_coord.append(face_coord)
+
+                    # cat 所有 slice
+                    all_face_feat = torch.cat(all_face_feat, dim=1)  # (B, N_faces_total, latent_dim)
+                    all_face_coord = torch.cat(all_face_coord, dim=1)  # (B, N_faces_total, 3)
+
+                    # 拼接坐标和特征
+                    coord_feat = torch.cat([all_face_coord, all_face_feat], dim=-1)  # (B, N_faces_total, 3 + latent_dim)
+
+                    # 如果你只想要 N_faces_total × (3 + latent_dim) 去掉 batch 维
+                    coord_feat = coord_feat.squeeze(0)
+                    print(coord_feat.shape)
+
+                    return coord_feat  # (N_faces_total, 3 + latent_dim)
 
                 def sample_and_mean_memory_save_version(part_planes, tensor_vertices, n_point_per_face):
                     n_sample_each = self.cfg.n_sample_each # we iterate over this to avoid OOM
@@ -203,8 +261,9 @@ class Model(pl.LightningModule):
                 #### Take mean feature in the triangle
                 print("Time elapsed for feature prediction: " + str(time.time() - starttime))
                 point_feat = point_feat.reshape(-1, 448).cpu().numpy()
-                np.save(f'{save_dir}/part_feat_{uid}_{view_id}_batch.npy', point_feat)
-                print(f"Exported part_feat_{uid}_{view_id}.npy")
+                # np.save(f'{save_dir}/part_feat_{uid}_{view_id}_batch.npy', point_feat)
+                np.save(f'{save_dir}/part_feat_coord_{uid}_{view_id}_batch.npy', per_face_coord_feat(part_planes, tensor_vertices, n_point_per_face, self.cfg.n_sample_each).cpu().numpy())
+                # print(f"Exported part_feat_{uid}_{view_id}.npy")
 
                 ###########
                 from sklearn.decomposition import PCA

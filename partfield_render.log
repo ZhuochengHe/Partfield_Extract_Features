@@ -1,0 +1,213 @@
+Directories:
+  GLB_DIR     = /scratch/eecs442f25_class_root/eecs442f25_class/jonzhe/data/objaverse_glbs/batch_0
+  FEAT_DIR    = /scratch/eecs442f25_class_root/eecs442f25_class/jonzhe/output/partfield_features/batch_0
+  IMG_DIR     = /scratch/eecs442f25_class_root/eecs442f25_class/jonzhe/output/2d_images/batch_0
+🎨 Rendering 2D projections...
+[INFO] Found 200 GLB files in /scratch/eecs442f25_class_root/eecs442f25_class/jonzhe/data/objaverse_glbs/batch_0
+Rendering GLB files:   0%|          | 0/200 [00:00<?, ?it/s]Rendering GLB files:   0%|          | 1/200 [00:01<04:14,  1.28s/it]Rendering GLB files:   1%|          | 2/200 [00:01<02:04,  1.58it/s]Rendering GLB files:   2%|▏         | 3/200 [00:05<06:42,  2.04s/it]Rendering GLB files:   2%|▏         | 4/200 [00:07<06:46,  2.08s/it]Rendering GLB files:   2%|▎         | 5/200 [00:07<04:27,  1.37s/it]Rendering GLB files:   3%|▎         | 6/200 [00:07<03:04,  1.05it/s]Rendering GLB files:   4%|▎         | 7/200 [00:07<02:15,  1.42it/s]Rendering GLB files:   4%|▍         | 9/200 [00:08<01:38,  1.94it/s]Rendering GLB files:   5%|▌         | 10/200 [00:09<02:11,  1.45it/s]Rendering GLB files:   6%|▌         | 11/200 [00:09<01:41,  1.87it/s]Rendering GLB files:   6%|▌         | 12/200 [00:09<01:27,  2.16it/s]Rendering GLB files:   6%|▋         | 13/200 [00:10<01:12,  2.58it/s]Rendering GLB files:   7%|▋         | 14/200 [00:10<00:57,  3.23it/s]Rendering GLB files:   8%|▊         | 15/200 [00:10<00:56,  3.30it/s]Rendering GLB files:   8%|▊         | 16/200 [00:10<00:48,  3.80it/s]Rendering GLB files:   9%|▉         | 18/200 [00:11<01:01,  2.96it/s]Rendering GLB files:  10%|█         | 20/200 [00:11<00:41,  4.39it/s]Rendering GLB files:  10%|█         | 21/200 [00:11<00:37,  4.79it/s]Rendering GLB files:  11%|█         | 22/200 [00:11<00:33,  5.31it/s]Rendering GLB files:  12%|█▏        | 23/200 [00:14<02:35,  1.13it/s]Rendering GLB files:  12%|█▏        | 24/200 [00:19<05:23,  1.84s/it]Rendering GLB files:  12%|█▎        | 25/200 [00:20<04:29,  1.54s/it]Rendering GLB files:  13%|█▎        | 26/200 [00:20<03:38,  1.26s/it]Rendering GLB files:  14%|█▍        | 28/200 [00:21<02:26,  1.18it/s]Rendering GLB files:  14%|█▍        | 29/200 [00:21<01:55,  1.49it/s]Rendering GLB files:  16%|█▌        | 31/200 [00:22<01:45,  1.60it/s]Rendering GLB files:  16%|█▌        | 32/200 [00:23<02:03,  1.36it/s]Rendering GLB files:  16%|█▋        | 33/200 [00:23<01:43,  1.61it/s]Rendering GLB files:  17%|█▋        | 34/200 [00:27<03:46,  1.37s/it]Rendering GLB files:  18%|█▊        | 35/200 [00:27<03:00,  1.10s/it]Rendering GLB files:  18%|█▊        | 36/200 [00:28<02:43,  1.01it/s]Rendering GLB files:  18%|█▊        | 37/200 [00:28<02:02,  1.33it/s]Rendering GLB files:  20%|█▉        | 39/200 [00:28<01:11,  2.26it/s]Rendering GLB files:  21%|██        | 42/200 [00:31<01:37,  1.63it/s]Rendering GLB files:  22%|██▏       | 44/200 [00:31<01:09,  2.26it/s]Rendering GLB files:  23%|██▎       | 46/200 [00:31<00:51,  3.00it/s]Rendering GLB files:  24%|██▎       | 47/200 [00:31<00:49,  3.09it/s]Rendering GLB files:  24%|██▍       | 49/200 [00:31<00:36,  4.09it/s]Rendering GLB files:  26%|██▌       | 51/200 [00:32<00:42,  3.48it/s]Rendering GLB files:  26%|██▌       | 52/200 [00:32<00:38,  3.88it/s]Rendering GLB files:  26%|██▋       | 53/200 [00:32<00:33,  4.41it/s]Rendering GLB files:  27%|██▋       | 54/200 [00:33<00:49,  2.92it/s]Rendering GLB files:  28%|██▊       | 55/200 [00:33<00:41,  3.48it/s]Rendering GLB files:  28%|██▊       | 56/200 [00:33<00:34,  4.13it/s]Rendering GLB files:  28%|██▊       | 57/200 [00:35<01:09,  2.05it/s]Rendering GLB files:  29%|██▉       | 58/200 [00:35<01:16,  1.86it/s]Rendering GLB files:  30%|███       | 60/200 [00:36<00:56,  2.49it/s]Rendering GLB files:  30%|███       | 61/200 [00:36<00:45,  3.04it/s]Rendering GLB files:  31%|███       | 62/200 [00:36<00:39,  3.46it/s]Rendering GLB files:  32%|███▏      | 63/200 [00:36<00:35,  3.82it/s]Rendering GLB files:  32%|███▏      | 64/200 [00:36<00:37,  3.60it/s]Rendering GLB files:  32%|███▎      | 65/200 [00:37<00:48,  2.79it/s]Rendering GLB files:  34%|███▎      | 67/200 [00:37<00:31,  4.29it/s]Rendering GLB files:  34%|███▍      | 69/200 [00:38<00:31,  4.16it/s]Rendering GLB files:  36%|███▌      | 71/200 [00:38<00:28,  4.54it/s]Rendering GLB files:  36%|███▌      | 72/200 [00:38<00:30,  4.20it/s]Rendering GLB files:  36%|███▋      | 73/200 [00:39<00:27,  4.67it/s]Rendering GLB files:  37%|███▋      | 74/200 [00:39<00:36,  3.41it/s]Rendering GLB files:  38%|███▊      | 75/200 [00:39<00:31,  3.94it/s]Rendering GLB files:  38%|███▊      | 76/200 [00:40<00:45,  2.74it/s]Rendering GLB files:  39%|███▉      | 78/200 [00:40<00:31,  3.89it/s]Rendering GLB files:  40%|███▉      | 79/200 [00:40<00:27,  4.32it/s]Rendering GLB files:  41%|████      | 82/200 [00:41<00:25,  4.65it/s]Rendering GLB files:  42%|████▏     | 83/200 [00:41<00:28,  4.16it/s]Rendering GLB files:  42%|████▏     | 84/200 [00:42<00:31,  3.65it/s]Rendering GLB files:  43%|████▎     | 86/200 [00:42<00:23,  4.82it/s]Rendering GLB files:  44%|████▎     | 87/200 [00:43<00:35,  3.18it/s]Rendering GLB files:  45%|████▌     | 90/200 [00:43<00:22,  4.93it/s]Rendering GLB files:  46%|████▌     | 92/200 [00:43<00:18,  5.86it/s]Rendering GLB files:  46%|████▋     | 93/200 [00:43<00:17,  6.03it/s]Rendering GLB files:  47%|████▋     | 94/200 [00:49<02:22,  1.34s/it]Rendering GLB files:  48%|████▊     | 95/200 [00:49<01:52,  1.07s/it]Rendering GLB files:  48%|████▊     | 96/200 [00:50<01:51,  1.07s/it]Rendering GLB files:  48%|████▊     | 97/200 [00:51<01:34,  1.09it/s]Rendering GLB files:  49%|████▉     | 98/200 [00:51<01:13,  1.39it/s]Rendering GLB files:  50%|█████     | 100/200 [00:52<01:03,  1.58it/s]Rendering GLB files:  51%|█████     | 102/200 [00:52<00:40,  2.41it/s]Rendering GLB files:  52%|█████▏    | 103/200 [00:53<00:54,  1.78it/s]Rendering GLB files:  52%|█████▏    | 104/200 [00:55<01:15,  1.27it/s]Rendering GLB files:  52%|█████▎    | 105/200 [00:55<01:05,  1.46it/s]Rendering GLB files:  53%|█████▎    | 106/200 [00:56<01:11,  1.32it/s]Rendering GLB files:  54%|█████▎    | 107/200 [00:57<01:05,  1.41it/s]Rendering GLB files:  54%|█████▍    | 108/200 [00:57<00:51,  1.79it/s]Rendering GLB files:  55%|█████▌    | 110/200 [00:58<00:44,  2.03it/s]Rendering GLB files:  56%|█████▌    | 111/200 [00:59<01:03,  1.41it/s]Rendering GLB files:  56%|█████▌    | 112/200 [00:59<00:50,  1.73it/s]Rendering GLB files:  56%|█████▋    | 113/200 [00:59<00:41,  2.09it/s]Rendering GLB files:  57%|█████▋    | 114/200 [00:59<00:32,  2.66it/s]Rendering GLB files:  57%|█████▊    | 115/200 [01:02<01:29,  1.05s/it]Rendering GLB files:  58%|█████▊    | 117/200 [01:03<01:06,  1.25it/s]Rendering GLB files:  60%|██████    | 120/200 [01:03<00:35,  2.24it/s]Rendering GLB files:  61%|██████    | 122/200 [01:04<00:25,  3.03it/s]Rendering GLB files:  62%|██████▏   | 124/200 [01:05<00:28,  2.65it/s]Rendering GLB files:  63%|██████▎   | 126/200 [01:05<00:21,  3.48it/s]Rendering GLB files:  64%|██████▎   | 127/200 [01:06<00:36,  2.03it/s]Rendering GLB files:  64%|██████▍   | 128/200 [01:08<00:49,  1.45it/s]Rendering GLB files:  64%|██████▍   | 129/200 [01:08<00:41,  1.72it/s]Rendering GLB files:  65%|██████▌   | 130/200 [01:08<00:32,  2.15it/s]Rendering GLB files:  66%|██████▌   | 131/200 [01:08<00:31,  2.22it/s]Rendering GLB files:  66%|██████▌   | 132/200 [01:09<00:30,  2.23it/s]Rendering GLB files:  67%|██████▋   | 134/200 [01:10<00:29,  2.26it/s]Rendering GLB files:  68%|██████▊   | 135/200 [01:10<00:26,  2.43it/s]Rendering GLB files:  68%|██████▊   | 136/200 [01:10<00:23,  2.73it/s]Rendering GLB files:  68%|██████▊   | 137/200 [01:10<00:19,  3.26it/s]Rendering GLB files:  69%|██████▉   | 138/200 [01:11<00:30,  2.06it/s]Rendering GLB files:  70%|██████▉   | 139/200 [01:11<00:23,  2.60it/s]Rendering GLB files:  70%|███████   | 140/200 [01:16<01:31,  1.53s/it]Rendering GLB files:  70%|███████   | 141/200 [01:16<01:08,  1.17s/it]Rendering GLB files:  72%|███████▏  | 143/200 [01:16<00:39,  1.46it/s]Rendering GLB files:  73%|███████▎  | 146/200 [01:16<00:20,  2.69it/s]Rendering GLB files:  74%|███████▎  | 147/200 [01:17<00:22,  2.38it/s]Rendering GLB files:  74%|███████▍  | 148/200 [01:18<00:24,  2.16it/s]Rendering GLB files:  75%|███████▌  | 150/200 [01:18<00:17,  2.94it/s]Rendering GLB files:  76%|███████▌  | 151/200 [01:19<00:21,  2.27it/s]Rendering GLB files:  76%|███████▌  | 152/200 [01:19<00:18,  2.58it/s]Rendering GLB files:  76%|███████▋  | 153/200 [01:19<00:15,  3.10it/s]Rendering GLB files:  77%|███████▋  | 154/200 [01:19<00:12,  3.60it/s]Rendering GLB files:  78%|███████▊  | 155/200 [01:20<00:14,  3.10it/s]Rendering GLB files:  79%|███████▉  | 158/200 [01:20<00:08,  4.84it/s]Rendering GLB files:  80%|███████▉  | 159/200 [01:20<00:10,  3.93it/s]Rendering GLB files:  80%|████████  | 160/200 [01:21<00:11,  3.48it/s]Rendering GLB files:  80%|████████  | 161/200 [01:22<00:14,  2.62it/s]Rendering GLB files:  81%|████████  | 162/200 [01:23<00:23,  1.63it/s]Rendering GLB files:  82%|████████▏ | 163/200 [01:24<00:26,  1.40it/s]Rendering GLB files:  82%|████████▏ | 164/200 [01:24<00:19,  1.80it/s]Rendering GLB files:  83%|████████▎ | 166/200 [01:24<00:12,  2.74it/s]Rendering GLB files:  84%|████████▎ | 167/200 [01:28<00:43,  1.31s/it]Rendering GLB files:  84%|████████▍ | 168/200 [01:29<00:32,  1.03s/it]Rendering GLB files:  84%|████████▍ | 169/200 [01:29<00:28,  1.07it/s]Rendering GLB files:  86%|████████▌ | 172/200 [01:30<00:13,  2.13it/s]Rendering GLB files:  86%|████████▋ | 173/200 [01:30<00:12,  2.24it/s]Rendering GLB files:  88%|████████▊ | 175/200 [01:30<00:08,  3.11it/s]Rendering GLB files:  88%|████████▊ | 176/200 [01:30<00:06,  3.55it/s]Rendering GLB files:  88%|████████▊ | 177/200 [01:30<00:05,  3.94it/s]Rendering GLB files:  89%|████████▉ | 178/200 [01:31<00:05,  4.38it/s]Rendering GLB files:  90%|█████████ | 180/200 [01:32<00:07,  2.74it/s]Rendering GLB files:  90%|█████████ | 181/200 [01:32<00:05,  3.28it/s]Rendering GLB files:  92%|█████████▏| 183/200 [01:32<00:03,  4.36it/s]Rendering GLB files:  92%|█████████▎| 185/200 [01:32<00:03,  4.78it/s]Rendering GLB files:  94%|█████████▎| 187/200 [01:33<00:02,  5.96it/s]Rendering GLB files:  94%|█████████▍| 188/200 [01:33<00:01,  6.27it/s]Rendering GLB files:  95%|█████████▌| 190/200 [01:33<00:01,  7.06it/s]Rendering GLB files:  96%|█████████▌| 191/200 [01:34<00:02,  3.96it/s]Rendering GLB files:  96%|█████████▋| 193/200 [01:34<00:01,  3.86it/s]Rendering GLB files:  98%|█████████▊| 195/200 [01:34<00:01,  4.79it/s]Rendering GLB files:  98%|█████████▊| 197/200 [01:35<00:00,  4.80it/s]Rendering GLB files:  99%|█████████▉| 198/200 [01:35<00:00,  4.78it/s]Rendering GLB files: 100%|██████████| 200/200 [01:35<00:00,  5.67it/s]Rendering GLB files: 100%|██████████| 200/200 [01:35<00:00,  2.09it/s]
+[WARNING] Failed 000074a334c541878360457c672b6c2e.glb: Cannot connect to "None"
+[WARNING] Failed 0000d20857dd4651a0bd73a62d6fe155.glb: Cannot connect to "None"
+[WARNING] Failed 0002b84b1d344b00a351b78df4bedbe5.glb: Cannot connect to "None"
+[WARNING] Failed 000329e889134a47aada12bfda4950da.glb: Cannot connect to "None"
+[WARNING] Failed 00033fc37b80452aaa008535bea6c9d5.glb: Cannot connect to "None"
+[WARNING] Failed 00035e1a27b74512a639464ed2435683.glb: Cannot connect to "None"
+[WARNING] Failed 00041d6a01ed4217b3cd71bdd72f91f4.glb: Cannot connect to "None"
+[WARNING] Failed 0004615bc36e42338405db5795e0fe92.glb: Cannot connect to "None"
+[WARNING] Failed 0004ad33093b44ad8189747e03bfb2c0.glb: Cannot connect to "None"
+[WARNING] Failed 0005033c6f754d00899127df5e2388f7.glb: Cannot connect to "None"
+[WARNING] Failed 0005f4b00efb40e2bedc767f36242f3a.glb: Cannot connect to "None"
+[WARNING] Failed 00064c7f7cb7415fa622100e3cadc13f.glb: Cannot connect to "None"
+[WARNING] Failed 00064e6f6eec4fd7acf27091b8de4d70.glb: Cannot connect to "None"
+[WARNING] Failed 0007008488014d03bd49cee214766efc.glb: Cannot connect to "None"
+[WARNING] Failed 00071c982fed4794a7d4cdae5c48c61b.glb: Cannot connect to "None"
+[WARNING] Failed 00071da7aeda4a308f749217542e9521.glb: Cannot connect to "None"
+[WARNING] Failed 00079540be164f50b1e267fb11d7db6d.glb: Cannot connect to "None"
+[WARNING] Failed 0007ebf0d1e74e3aa61a0a0f0e8aa445.glb: Cannot connect to "None"
+[WARNING] Failed 0008079973e64039a4ff846ed989c754.glb: Cannot connect to "None"
+[WARNING] Failed 00089a40101d4c1487edf050b94f6008.glb: Cannot connect to "None"
+[WARNING] Failed 00089cb739bf4b768b118fd16da0034b.glb: Cannot connect to "None"
+[WARNING] Failed 0008b2d1c5994077b18600b33d47a048.glb: Cannot connect to "None"
+[WARNING] Failed 00093e5b2808425da0fef3c7f96eedf3.glb: Cannot connect to "None"
+[WARNING] Failed 00096aa8bdb64803b0177214ee265f1b.glb: Cannot connect to "None"
+[WARNING] Failed 0009f74807184fefa8eb58211edba390.glb: Cannot connect to "None"
+[WARNING] Failed 000a3db05f4b49c89bc0700446aa6262.glb: Cannot connect to "None"
+[WARNING] Failed 000a6774ed02497391fc40ef378faef6.glb: Cannot connect to "None"
+[WARNING] Failed 000a7b9613a4431ab602ad0b8eb275dd.glb: Cannot connect to "None"
+[WARNING] Failed 000a883519934f4383b9aeb0d535c545.glb: Cannot connect to "None"
+[WARNING] Failed 000b35046f6643c0af0237261c09be04.glb: Cannot connect to "None"
+[WARNING] Failed 000b5ec0eec2487a824373a5bc876226.glb: Cannot connect to "None"
+[WARNING] Failed 000b662130de4537ad8a233c58b0b4fe.glb: Cannot connect to "None"
+[WARNING] Failed 000c08310a6d403dbce13ab6b67c7901.glb: Cannot connect to "None"
+[WARNING] Failed 000c80447f634f5dbaab12aee9050b0f.glb: Cannot connect to "None"
+[WARNING] Failed 000c895f9ef6491894ac588634f3d2b5.glb: Cannot connect to "None"
+[WARNING] Failed 000c99ea07e24690a556b9ecade1daae.glb: Cannot connect to "None"
+[WARNING] Failed 000d386e0bc64a13b93bd18aebdee016.glb: Cannot connect to "None"
+[WARNING] Failed 000d4db112fd42c4a351018e8cf1f244.glb: Cannot connect to "None"
+[WARNING] Failed 000e5481e9824550ab803d0c8b18592d.glb: Cannot connect to "None"
+[WARNING] Failed 000e9bec89ac4ca39c0dcc22af2b805c.glb: Cannot connect to "None"
+[WARNING] Failed 000f360a4ba3434593c53ea3b57a7365.glb: Cannot connect to "None"
+[WARNING] Failed 000f88bb21164319ae797d315be6bc0e.glb: Cannot connect to "None"
+[WARNING] Failed 0010245ab5db4f12a18dfcd80fa9df4d.glb: Cannot connect to "None"
+[WARNING] Failed 001076878ce64a328303072fe10c0d59.glb: Cannot connect to "None"
+[WARNING] Failed 00108276a86c44cd862ab7eeea0c161e.glb: Cannot connect to "None"
+[WARNING] Failed 0010bdd95c604a25a638499bd7a54355.glb: Cannot connect to "None"
+[WARNING] Failed 00110b996d944a658db8f24c6ccf36ec.glb: Cannot connect to "None"
+[WARNING] Failed 00116695e48c49de967cccd4b9b7455a.glb: Cannot connect to "None"
+[WARNING] Failed 0011678e5e3e4b8bb9a35fe48ff369af.glb: Cannot connect to "None"
+[WARNING] Failed 0011b0e07fde4491b1f3875f25fff2d7.glb: Cannot connect to "None"
+[WARNING] Failed 0011c09932cb4a1995a226b6993071b3.glb: Cannot connect to "None"
+[WARNING] Failed 0011ed7823a940f0a0a567e11dfd659d.glb: Cannot connect to "None"
+[WARNING] Failed 0012025bf500446a89486448d92eddca.glb: Cannot connect to "None"
+[WARNING] Failed 0012053f094f4309808f52b3efb88977.glb: Cannot connect to "None"
+[WARNING] Failed 001240570ed643ebb6f9cc1b4286d202.glb: Cannot connect to "None"
+[WARNING] Failed 001240db1fd642cd95e876242b0a742e.glb: Cannot connect to "None"
+[WARNING] Failed 001277d851f74623917e2253c8bfb3a4.glb: Cannot connect to "None"
+[WARNING] Failed 00127a0ffbf149608023c0046ec7f2c3.glb: Cannot connect to "None"
+[WARNING] Failed 00130eea9e884209be92f68378a817e8.glb: Cannot connect to "None"
+[WARNING] Failed 00131fe93cd94cf6aed9bcb6bd3187f7.glb: Cannot connect to "None"
+[WARNING] Failed 0013289f6eff4efdb17922804bf052c0.glb: Cannot connect to "None"
+[WARNING] Failed 001337c586f34fe7b3c7948d577229a3.glb: Cannot connect to "None"
+[WARNING] Failed 00138fd8e73f46d6827e9849d0ed86bd.glb: Cannot connect to "None"
+[WARNING] Failed 001394255b5d42db9f448e516318ff86.glb: Cannot connect to "None"
+[WARNING] Failed 0013bdaec08345ec9fd03214030baeb2.glb: Cannot connect to "None"
+[WARNING] Failed 0013cf5979c846449c817a2439fd8705.glb: Cannot connect to "None"
+[WARNING] Failed 0013d88f17a245b0bff5ebe713bd72ab.glb: Cannot connect to "None"
+[WARNING] Failed 0013e02f9ed44da697bb8f25c512ce58.glb: Cannot connect to "None"
+[WARNING] Failed 0014994de4d24fcf84a3fba73596470b.glb: Cannot connect to "None"
+[WARNING] Failed 0014b2aa11384be1bce41ef37090101e.glb: Cannot connect to "None"
+[WARNING] Failed 0014e449e6c143bf9085d7c1a48f4bf7.glb: Cannot connect to "None"
+[WARNING] Failed 001559b408504642831e6c604eaf583f.glb: Cannot connect to "None"
+[WARNING] Failed 0015c579cfa440a7a2bd0a3f14395f05.glb: Cannot connect to "None"
+[WARNING] Failed 0016094f3676436c8ebee5c1a68d4a8e.glb: Cannot connect to "None"
+[WARNING] Failed 00165abfda6e48d18570cf984d4609f1.glb: Cannot connect to "None"
+[WARNING] Failed 0016ab459cc74b46950e36bb7e9db7e5.glb: Cannot connect to "None"
+[WARNING] Failed 00174cebac78410a82db5122aa3a9849.glb: Cannot connect to "None"
+[WARNING] Failed 00184cc3c6674f2a8aa79e0e0d77ae31.glb: Cannot connect to "None"
+[WARNING] Failed 00185219e34a456c9b7ac351816e385e.glb: Cannot connect to "None"
+[WARNING] Failed 00185550e99a4db3aef51ffca682dab8.glb: Cannot connect to "None"
+[WARNING] Failed 00188697a34d4820b35d92c3972e35dd.glb: Cannot connect to "None"
+[WARNING] Failed 001962e5ec574d5292e13a13ac03edd6.glb: Cannot connect to "None"
+[WARNING] Failed 0019c537f5884ce08907a07e72bd3b64.glb: Cannot connect to "None"
+[WARNING] Failed 001a41040ba04fb986ae7300e1997e0a.glb: Cannot connect to "None"
+[WARNING] Failed 001a5201eddf4f3b98591598584673f5.glb: Cannot connect to "None"
+[WARNING] Failed 001a960897dd46c9a6a439e5fb1167f8.glb: Cannot connect to "None"
+[WARNING] Failed 001aaad71c0046009e279bc5a3f598b8.glb: Cannot connect to "None"
+[WARNING] Failed 001ab557cf294b9f8e2db0bd79649e2f.glb: Cannot connect to "None"
+[WARNING] Failed 001abb1a3f4c412fbd707239acb68cd6.glb: Cannot connect to "None"
+[WARNING] Failed 001abe72c90247bf9dc0df5292d3373c.glb: Cannot connect to "None"
+[WARNING] Failed 001ad554589442959780744124fdb054.glb: Cannot connect to "None"
+[WARNING] Failed 001ba97fe88643e8abe13b8b57986dae.glb: Cannot connect to "None"
+[WARNING] Failed 001bff234d4c438c9f8fae8662757fc7.glb: Cannot connect to "None"
+[WARNING] Failed 001c9967a7b94750b58faa63707fe441.glb: Cannot connect to "None"
+[WARNING] Failed 001cd66fafcf46809ea572a8e430d3d3.glb: Cannot connect to "None"
+[WARNING] Failed 001cd8e41a7549819b799d858b80947f.glb: Cannot connect to "None"
+[WARNING] Failed 001cd92bbae24e018eba129dec96cd62.glb: Cannot connect to "None"
+[WARNING] Failed 001cfadfb9204424bccc45501ce6b90e.glb: Cannot connect to "None"
+[WARNING] Failed 001d1b57e9df4273bede948b26429429.glb: Cannot connect to "None"
+[WARNING] Failed 001d454b3b4546cab0d00f4cdf47b2d1.glb: Cannot connect to "None"
+[WARNING] Failed 001da09a69fa404786fc902ff4c99f6f.glb: Cannot connect to "None"
+[WARNING] Failed 001df6fc53ab4f20b7062e8c06f6c8b7.glb: Cannot connect to "None"
+[WARNING] Failed 001eac0e67494e9485b44e6d180d5e30.glb: Cannot connect to "None"
+[WARNING] Failed 001ee191c4794811ac9cc9d59c1d37b7.glb: Cannot connect to "None"
+[WARNING] Failed 001f17841a2642e4a9fa2f9b1687aa1e.glb: Cannot connect to "None"
+[WARNING] Failed 001f33bff24041518b5136b0f16bc4f3.glb: Cannot connect to "None"
+[WARNING] Failed 001f65de43b540d8ac76eab191dffb17.glb: Cannot connect to "None"
+[WARNING] Failed 001fe76523954a87b4c94ded007c0c4b.glb: Cannot connect to "None"
+[WARNING] Failed 001fe8adb25a49d0b2650a5401dde019.glb: Cannot connect to "None"
+[WARNING] Failed 001ff3d8b3064bf38eaa5a806873de81.glb: Cannot connect to "None"
+[WARNING] Failed 00202c1c1796473d85bbdf68ce7e5229.glb: Cannot connect to "None"
+[WARNING] Failed 00206dea3ad14c99b161a3249035d104.glb: Cannot connect to "None"
+[WARNING] Failed 0020acb8b03c4a1694a3a796904421d8.glb: Cannot connect to "None"
+[WARNING] Failed 00216fcecf054e5fa1eb93f638ab9bcc.glb: Cannot connect to "None"
+[WARNING] Failed 00221fb4c74b44a98dab75228d047950.glb: Cannot connect to "None"
+[WARNING] Failed 0022aa1615ff42178969cff81a61cc2b.glb: Cannot connect to "None"
+[WARNING] Failed 0022d2e01b014d328294b828e48defa1.glb: Cannot connect to "None"
+[WARNING] Failed 00238df4d2ae48409888a8dc21e643a9.glb: Cannot connect to "None"
+[WARNING] Failed 0024e7af8d944929a582eef26ceafe23.glb: Cannot connect to "None"
+[WARNING] Failed 00250aa256e0465a8c1bbf99acd0b235.glb: Cannot connect to "None"
+[WARNING] Failed 00253f4041414e91a6c6577cab650c0a.glb: Cannot connect to "None"
+[WARNING] Failed 00255833a714433390e80fb480e80ee9.glb: Cannot connect to "None"
+[WARNING] Failed 0025c5e2333949feb1db259d4ff08dbe.glb: Cannot connect to "None"
+[WARNING] Failed 00263a000c684febb52a46762e2860ef.glb: Cannot connect to "None"
+[WARNING] Failed 00269571bd8842fb829350dd5e90d193.glb: Cannot connect to "None"
+[WARNING] Failed 002749d6607e4db8888b650a23c445ca.glb: Cannot connect to "None"
+[WARNING] Failed 002768a2c8c44fc09b8483afc3feecb0.glb: Cannot connect to "None"
+[WARNING] Failed 00276caab71a4fd28852a9b2753915a9.glb: Cannot connect to "None"
+[WARNING] Failed 002836d858d14b8f86b9bfbe067fcb72.glb: Cannot connect to "None"
+[WARNING] Failed 0028b77436394fd7963c013e04e69e70.glb: Cannot connect to "None"
+[WARNING] Failed 00293a1624304af5bae76fe6b3b3731d.glb: Cannot connect to "None"
+[WARNING] Failed 002942b4116943c38edfd4f290c3a0f3.glb: Cannot connect to "None"
+[WARNING] Failed 0029534303434acc979ca828d4e38986.glb: Cannot connect to "None"
+[WARNING] Failed 00295c193a394562ae07ad4ab28695f5.glb: Cannot connect to "None"
+[WARNING] Failed 002961321f00484aa888e97ce858c38d.glb: Cannot connect to "None"
+[WARNING] Failed 002963066a10490a80350a3931df529b.glb: Cannot connect to "None"
+[WARNING] Failed 00297b1f23a549d7bc8f26013b57788b.glb: Cannot connect to "None"
+[WARNING] Failed 002a139527964660a7ffd4933ed923fe.glb: Cannot connect to "None"
+[WARNING] Failed 002aec05c41342dea61828f67d340d2d.glb: Cannot connect to "None"
+[WARNING] Failed 002be48987e54ac0924772d6a562eb51.glb: Cannot connect to "None"
+[WARNING] Failed 002c266eb95a45039fc4b9da9875a2ab.glb: Cannot connect to "None"
+[WARNING] Failed 002cae0f0c8f4825a7a58a987abf93fd.glb: Cannot connect to "None"
+[WARNING] Failed 002d04579ea64917b103283c82f460c6.glb: Cannot connect to "None"
+[WARNING] Failed 002d11e6d0ac46a08d55b668b970862d.glb: Cannot connect to "None"
+[WARNING] Failed 002d2760fcdc4e0eaeb9bd48a8dca58e.glb: Cannot connect to "None"
+[WARNING] Failed 002e8e0316d54560a9b25773bdd177e2.glb: Cannot connect to "None"
+[WARNING] Failed 002ff2799aa04812a8f0893d65c0b548.glb: Cannot connect to "None"
+[WARNING] Failed 00313625890f4b4aa946a4e653a64ee7.glb: Cannot connect to "None"
+[WARNING] Failed 00316f886eb24ecda5799b182262fc2f.glb: Cannot connect to "None"
+[WARNING] Failed 003199cc6ff2410cb2d8e6f8a9cbb163.glb: Cannot connect to "None"
+[WARNING] Failed 0031b7a50ac14fc483c3ee36605eb51f.glb: Cannot connect to "None"
+[WARNING] Failed 0031ba19d3e042c4bcf79eba40ccc812.glb: Cannot connect to "None"
+[WARNING] Failed 0031ed6284ac4310952095302aad77c2.glb: Cannot connect to "None"
+[WARNING] Failed 003216268ef446c1bf3be5e5d085aa4d.glb: Cannot connect to "None"
+[WARNING] Failed 00322ad15e1e4e5d9b626336f582f7f0.glb: Cannot connect to "None"
+[WARNING] Failed 003245510e8f4bcb98f1794348606f68.glb: Cannot connect to "None"
+[WARNING] Failed 00325883940a484c860005c7c2ce1091.glb: Cannot connect to "None"
+[WARNING] Failed 0032696f5871429fbd0549d9628f812c.glb: Cannot connect to "None"
+[WARNING] Failed 0032b57972e64aa9a24713b414b43e29.glb: Cannot connect to "None"
+[WARNING] Failed 0033273bfee44f218488e2f204f733f9.glb: Cannot connect to "None"
+[WARNING] Failed 0033493266c345c59882fec87bff8066.glb: Cannot connect to "None"
+[WARNING] Failed 0033afe5424844ba9d27e753d1435fca.glb: Cannot connect to "None"
+[WARNING] Failed 003402fb2c0e4880aca1af69add1968e.glb: Cannot connect to "None"
+[WARNING] Failed 00344191af04477fb11b10883a1e1793.glb: Cannot connect to "None"
+[WARNING] Failed 0034cede682942c5880f8d6effbbeac2.glb: Cannot connect to "None"
+[WARNING] Failed 0034d8a0455b49aba8648661a9cea48d.glb: Cannot connect to "None"
+[WARNING] Failed 0035423ec7ec48d7bd13eabff3f65fd4.glb: Cannot connect to "None"
+[WARNING] Failed 00354eff9d5f4231a1776b61873ad7da.glb: Cannot connect to "None"
+[WARNING] Failed 0035d1b8aa3641f9b441710fdfd80112.glb: Cannot connect to "None"
+[WARNING] Failed 00360184348e4c47930a2260f332283e.glb: Cannot connect to "None"
+[WARNING] Failed 00363685cab84756a0e7e4c282f374d7.glb: Cannot connect to "None"
+[WARNING] Failed 003715596f13472c877ee3a622782d5a.glb: Cannot connect to "None"
+[WARNING] Failed 00379c7774d54fa7b934a93a70a25243.glb: Cannot connect to "None"
+[WARNING] Failed 00380c3f5cf548c9846faf3c42dfd6db.glb: Cannot connect to "None"
+[WARNING] Failed 00381cc98e334acea8621bd5a76489d2.glb: Cannot connect to "None"
+[WARNING] Failed 00385c92103c4d06bcef615b2bf31ef5.glb: Cannot connect to "None"
+[WARNING] Failed 00387ce097764acaa3f28e1fcdf5ac4b.glb: Cannot connect to "None"
+[WARNING] Failed 00394fb5aa3d4f8ea1620c21e7257d44.glb: Cannot connect to "None"
+[WARNING] Failed 0039da3a9062443a8cd389e6f276efe5.glb: Cannot connect to "None"
+[WARNING] Failed 0039e70f459d45989290a57e887b6caa.glb: Cannot connect to "None"
+[WARNING] Failed 003a25af806f4334b026073553a1d706.glb: Cannot connect to "None"
+[WARNING] Failed 003a3fbf66dd49d4a0d61fca2b81429d.glb: Cannot connect to "None"
+[WARNING] Failed 003a75f6c3f643ee86dd00ca7f1f9b81.glb: Cannot connect to "None"
+[WARNING] Failed 003ac14364af46889b390618bd886589.glb: Cannot connect to "None"
+[WARNING] Failed 003ad8f1f3a24fda96aaa556bef5aa4b.glb: Cannot connect to "None"
+[WARNING] Failed 003afa2db06e4ae6a38d0bb4babb8330.glb: Cannot connect to "None"
+[WARNING] Failed 003ba3e54a524999a0fbbf446573d589.glb: Cannot connect to "None"
+[WARNING] Failed 003d34293e454607987bb615838c102d.glb: Cannot connect to "None"
+[WARNING] Failed 003d5550c56742a69f0c7930c7ed25c0.glb: Cannot connect to "None"
+[WARNING] Failed 003d7fcf881743ed914fc51545ded1f5.glb: Cannot connect to "None"
+[WARNING] Failed 003dd206d06e4fb7ba74da6770dbdc36.glb: Cannot connect to "None"
+[WARNING] Failed 003e0f9fd98041219de75d8b909a0f09.glb: Cannot connect to "None"
+[WARNING] Failed 003e660cb60041e3ada1c7f448ae6603.glb: Cannot connect to "None"
+[WARNING] Failed 003ec2d2612c4f54bea964f5ecf559e3.glb: Cannot connect to "None"
+[WARNING] Failed 003ec3f99a734f639492c33852f9f5ab.glb: Cannot connect to "None"
+[WARNING] Failed 003fd9927f4248c0a972a648ea689535.glb: Cannot connect to "None"
+[WARNING] Failed 003fe2520c054aadb1eabf2e70066684.glb: Cannot connect to "None"
+[WARNING] Failed 004034de724341ef82db684137be0d2a.glb: Cannot connect to "None"
+[WARNING] Failed 0040f94c8efd43639d8010874e4fefb6.glb: Cannot connect to "None"
+[WARNING] Failed 00416bed8cc14023b944f8ac6c8f0f4c.glb: Cannot connect to "None"
+[INFO] Rendering complete: 0 success, 200 failed
+📦 Compressing PNG files...
+tar: *.png: Cannot stat: No such file or directory
+tar: Exiting with failure status due to previous errors
+🧹 Removing original PNG files...
+✨ Done! Compressed images at: /scratch/eecs442f25_class_root/eecs442f25_class/jonzhe/output/2d_images/batch_0/images_batch_0.tar.gz

@@ -142,7 +142,10 @@ class Demo_Dataset(torch.utils.data.Dataset):
             print("before preprocessing...")
             print(mesh.vertices.shape)
             print(mesh.faces.shape)
-            print()
+            if mesh.vertices.shape[0] > 125000:
+                print("Too much vertices! Skip this glb")
+                return None
+                
 
             ### Pre-process mesh
             if self.preprocess_mesh:
@@ -170,14 +173,17 @@ class Demo_Dataset(torch.utils.data.Dataset):
                 print(mesh.faces.shape)
 
             ### Save input
-            save_dir = f"exp_results/{self.result_name}"
+            save_dir = self.result_name
             os.makedirs(save_dir, exist_ok=True)
             view_id = 0            
-            mesh.export(f'{save_dir}/input_{uid}_{view_id}.ply')                
+            # mesh.export(f'{save_dir}/input_{uid}_{view_id}.ply')                
 
 
-            pc, _ = trimesh.sample.sample_surface(mesh, self.pc_num_pts) 
+            pc, _ = trimesh.sample.sample_surface(mesh, self.pc_num_pts)
 
+            if pc.shape[0] < 3:
+                print(f"[Warning] Point cloud too small ({pc.shape[0]} points). Skipping:", ply_file)
+                return None
         result = {
                     'uid': uid
                 }
@@ -194,7 +200,10 @@ class Demo_Dataset(torch.utils.data.Dataset):
         
         gc.collect()
 
-        return self.get_model(self.data_list[index])
+        data = self.get_model(self.data_list[index])
+        if data is None:
+            return self.__getitem__((index + 1) % len(self.data_list))
+        return data
 
 ##############
 
@@ -269,7 +278,7 @@ class Demo_Remesh_Dataset(torch.utils.data.Dataset):
             print(mesh.faces.shape)
 
         ### Save input
-        save_dir = f"exp_results/{self.result_name}"
+        save_dir = self.result_name
         os.makedirs(save_dir, exist_ok=True)
         view_id = 0            
         mesh.export(f'{save_dir}/input_{uid}_{view_id}.ply')   
@@ -329,7 +338,16 @@ class Demo_Remesh_Dataset(torch.utils.data.Dataset):
             print("Error in tet.")
             mesh = mesh 
 
-        pc, _ = trimesh.sample.sample_surface(mesh, self.pc_num_pts) 
+        max_pc_points = 50000
+        num_faces = mesh.faces.shape[0]
+
+        max_faces_allowed = 120000
+        if num_faces > max_faces_allowed:
+            print(f"⚠️ Mesh too big ({num_faces} faces), skipping...")
+            return None
+
+        n_points = min(self.pc_num_pts, max_pc_points, num_faces * 500)
+        pc, _ = trimesh.sample.sample_surface(mesh, n_points) 
 
         result = {
                     'uid': uid
