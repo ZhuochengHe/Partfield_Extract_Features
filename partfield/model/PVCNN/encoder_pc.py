@@ -88,6 +88,46 @@ def softclip(x, min, max, hardness=5):
     x = max - F.softplus(-hardness*(x - max))/hardness
     return x
 
+def sample_triplane_feat_chunked(feature_triplane, normalized_pos, chunk_size=50000):
+    """
+    normalized_pos: (B, N, 3)
+    """
+    B, N, _ = normalized_pos.shape
+    outs = []
+    if N == 0:
+        C = feature_triplane.shape[2] 
+        return torch.empty(B, 0, C, device=normalized_pos.device, dtype=normalized_pos.dtype)
+
+    for start in range(0, N, chunk_size):
+        end = min(start + chunk_size, N)
+        pos_chunk = normalized_pos[:, start:end]
+
+        tri_plane = torch.unbind(feature_triplane, dim=1)
+
+        x_feat = F.grid_sample(
+            tri_plane[0],
+            torch.cat([pos_chunk[..., 0:1], pos_chunk[..., 1:2]], dim=-1).unsqueeze(1),
+            padding_mode='border', align_corners=True)
+
+        y_feat = F.grid_sample(
+            tri_plane[1],
+            torch.cat([pos_chunk[..., 1:2], pos_chunk[..., 2:3]], dim=-1).unsqueeze(1),
+            padding_mode='border', align_corners=True)
+
+        z_feat = F.grid_sample(
+            tri_plane[2],
+            torch.cat([pos_chunk[..., 0:1], pos_chunk[..., 2:3]], dim=-1).unsqueeze(1),
+            padding_mode='border', align_corners=True)
+
+        feat = (x_feat + y_feat + z_feat).squeeze(2).permute(0, 2, 1)
+
+        outs.append(feat)
+
+        del x_feat, y_feat, z_feat, feat, pos_chunk
+        torch.cuda.empty_cache()
+
+    return torch.cat(outs, dim=1)
+
 
 def sample_triplane_feat(feature_triplane, normalized_pos):
     '''

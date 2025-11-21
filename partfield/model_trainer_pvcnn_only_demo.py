@@ -13,7 +13,7 @@ import skimage
 import numpy as np
 import h5py
 import torch.distributed as dist
-from partfield.model.PVCNN.encoder_pc import TriPlanePC2Encoder, sample_triplane_feat
+from partfield.model.PVCNN.encoder_pc import TriPlanePC2Encoder, sample_triplane_feat, sample_triplane_feat_chunked
 import json
 import gc
 import time
@@ -117,7 +117,7 @@ class Model(pl.LightningModule):
 
         if self.cfg.is_pc:
             tensor_vertices = batch['pc'].reshape(1, -1, 3).cuda().to(torch.float16)
-            point_feat = sample_triplane_feat(part_planes, tensor_vertices) # N, M, C
+            point_feat = sample_triplane_feat_chunked(part_planes, tensor_vertices) # N, M, C
             point_feat = point_feat.cpu().detach().numpy().reshape(-1, 448)
 
             np.save(f'{save_dir}/part_feat_{uid}_{view_id}.npy', point_feat)
@@ -201,7 +201,7 @@ class Model(pl.LightningModule):
                             continue
 
                         # sample feature
-                        sampled_feature = sample_triplane_feat(part_planes, v_slice)  # (1, n_slice_points, latent_dim)
+                        sampled_feature = sample_triplane_feat_chunked(part_planes, v_slice)  # (1, n_slice_points, latent_dim)
                         B, n_points, latent_dim = sampled_feature.shape
 
                         # reshape 按 n_point_per_face 聚合
@@ -242,7 +242,7 @@ class Model(pl.LightningModule):
                     n_sample = n_v // n_sample_each + 1
                     all_sample = []
                     for i_sample in range(n_sample):
-                        sampled_feature = sample_triplane_feat(part_planes, tensor_vertices[:, i_sample * n_sample_each: i_sample * n_sample_each + n_sample_each,])
+                        sampled_feature = sample_triplane_feat_chunked(part_planes, tensor_vertices[:, i_sample * n_sample_each: i_sample * n_sample_each + n_sample_each,])
                         assert sampled_feature.shape[1] % n_point_per_face == 0
                         sampled_feature = sampled_feature.reshape(1, -1, n_point_per_face, sampled_feature.shape[-1])
                         sampled_feature = torch.mean(sampled_feature, axis=-2)
@@ -309,7 +309,7 @@ class Model(pl.LightningModule):
                     points = u * v0 + v * v1 + w * v2 
 
                     tensor_vertices = torch.from_numpy(points.copy()).reshape(1, -1, 3).cuda().to(torch.float32)
-                    point_feat = sample_triplane_feat(part_planes, tensor_vertices) # N, M, C 
+                    point_feat = sample_triplane_feat_chunked(part_planes, tensor_vertices) # N, M, C 
 
                     #### Take mean feature in the triangle
                     point_feat = torch.mean(point_feat, axis=1).cpu().detach().numpy()
