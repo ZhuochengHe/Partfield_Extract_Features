@@ -88,7 +88,7 @@ def softclip(x, min, max, hardness=5):
     x = max - F.softplus(-hardness*(x - max))/hardness
     return x
 
-def sample_triplane_feat_chunked(feature_triplane, normalized_pos, chunk_size=50000):
+def sample_triplane_feat_chunked(feature_triplane, normalized_pos, chunk_size=10000):
     """
     normalized_pos: (B, N, 3)
     """

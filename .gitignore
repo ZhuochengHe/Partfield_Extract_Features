@@ -1,3 +1,6 @@
 /data
 /model
 *.log
+/test
+lightning_logs/*
+/exp_results

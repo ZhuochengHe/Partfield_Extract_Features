@@ -152,6 +152,7 @@ class Model(pl.LightningModule):
             filename = f'{save_dir}/feat_pca_{uid}_{view_id}.ply'
             PlyData([el], text=True).write(filename)
             print(f"Saved PLY file: {filename}")
+            np.save(f'{save_dir}/part_feat_coord_{uid}_{view_id}.npy', np.concatenate([points, point_feat], axis=1))
             ############
         
         else:

@@ -3,8 +3,8 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --mem-per-cpu=8000m
-#SBATCH --time=00:45:00
+#SBATCH --mem-per-cpu=16000m
+#SBATCH --time=00:35:00
 #SBATCH --account=eecs442f25_class
 #SBATCH --partition=gpu_mig40,spgpu
 #SBATCH --gres=gpu:1
@@ -64,7 +64,7 @@ TAR_NAME="partfield_batch_${BATCH_ID}.tar.gz"
 CHECKSUM_NAME="${TAR_NAME}.sha256"
 
 # 打包
-tar -czvf "$TAR_NAME" ./*.npy
+tar -czvf "$TAR_NAME" ./*.npy ./*.ply
 
 # 生成校验文件（强烈推荐）
 sha256sum "$TAR_NAME" > "$CHECKSUM_NAME"
@@ -74,7 +74,8 @@ echo "🔐 SHA256 saved  : $CHECKSUM_NAME"
 
 # 如需删除原始文件，可打开下面两行
 echo "🧹 Cleaning original .npy files..."
-rm -f ./*.npy
+rm -f ./*.npy ./*.ply
 rm -rf "$DATA_BASE/objaverse_glbs/batch_${BATCH_ID}"
+rm -rf "$DATA_BASE/objaverse_cache"
 
 echo "🎉 All done!"

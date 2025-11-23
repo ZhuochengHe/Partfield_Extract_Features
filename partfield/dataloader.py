@@ -66,9 +66,11 @@ class Demo_Dataset(torch.utils.data.Dataset):
 
         self.data_path = cfg.dataset.data_path
         self.is_pc = cfg.is_pc
+        self.pc_num_pts = 100000
+        self.preprocess_mesh = cfg.preprocess_mesh
+        self.result_name = cfg.result_name
 
         all_files = os.listdir(self.data_path)
-
         selected = []
         for f in all_files:
             if ".ply" in f and self.is_pc:
@@ -76,53 +78,42 @@ class Demo_Dataset(torch.utils.data.Dataset):
             elif (".obj" in f or ".glb" in f or ".off" in f) and not self.is_pc:
                 selected.append(f)
 
+        if not self.is_pc:
+            safe_files = []
+            for f in selected:
+                try:
+                    mesh = load_mesh_util(os.path.join(self.data_path, f))
+                    if mesh.vertices.shape[0] <= 125000:
+                        safe_files.append(f)
+                    else:
+                        print(f"[Skipped] Too many vertices (>125000), file ignored: {f}")
+                except Exception as e:
+                    print(f"[Warning] Failed to load {f}, skipped. Error: {e}")
+            selected = safe_files
+
         self.data_list = selected
-        self.pc_num_pts = 100000
-
-        self.preprocess_mesh = cfg.preprocess_mesh
-        self.result_name = cfg.result_name
-
         print("val dataset len:", len(self.data_list))
 
-    
     def __len__(self):
         return len(self.data_list)
 
     def load_ply_to_numpy(self, filename):
-        """
-        Load a PLY file and extract the point cloud as a (N, 3) NumPy array.
-
-        Parameters:
-            filename (str): Path to the PLY file.
-
-        Returns:
-            numpy.ndarray: Point cloud array of shape (N, 3).
-        """
         ply_data = PlyData.read(filename)
-
-        # Extract vertex data
         vertex_data = ply_data["vertex"]
-        
-        # Convert to NumPy array (x, y, z)
         points = np.vstack([vertex_data["x"], vertex_data["y"], vertex_data["z"]]).T
-
         return points
 
     def get_model(self, ply_file):
-
         uid = ply_file.split(".")[-2].replace("/", "_")
 
-        ####
         if self.is_pc:
             ply_file_read = os.path.join(self.data_path, ply_file)
             pc = self.load_ply_to_numpy(ply_file_read)
-
             bbmin = pc.min(0)
             bbmax = pc.max(0)
             center = (bbmin + bbmax) * 0.5
             scale = 2.0 * 0.9 / (bbmax - bbmin).max()
             pc = (pc - center) * scale
-
         else:
             obj_path = os.path.join(self.data_path, ply_file)
             mesh = load_mesh_util(obj_path)
@@ -136,60 +127,30 @@ class Demo_Dataset(torch.utils.data.Dataset):
             vertices = (vertices - center) * scale
             mesh.vertices = vertices
 
-            ### Make sure it is a triangle mesh -- just convert the quad
             mesh.faces = quad_to_triangle_mesh(faces)
 
-            print("before preprocessing...")
-            print(mesh.vertices.shape)
-            print(mesh.faces.shape)
-            if mesh.vertices.shape[0] > 125000:
-                print("Too much vertices! Skip this glb")
-                return None
-                
-
-            ### Pre-process mesh
             if self.preprocess_mesh:
-                # Create a PyMeshLab mesh directly from vertices and faces
                 ml_mesh = pymeshlab.Mesh(vertex_matrix=mesh.vertices, face_matrix=mesh.faces)
-
-                # Create a MeshSet and add your mesh
                 ms = pymeshlab.MeshSet()
                 ms.add_mesh(ml_mesh, "from_trimesh")
-
-                # Apply filters
                 ms.apply_filter('meshing_remove_duplicate_faces')
                 ms.apply_filter('meshing_remove_duplicate_vertices')
-                percentageMerge = pymeshlab.PercentageValue(0.5)
-                ms.apply_filter('meshing_merge_close_vertices', threshold=percentageMerge)
+                ms.apply_filter('meshing_merge_close_vertices', threshold=pymeshlab.PercentageValue(0.5))
                 ms.apply_filter('meshing_remove_unreferenced_vertices')
-
-                # Save or extract mesh
                 processed = ms.current_mesh()
                 mesh.vertices = processed.vertex_matrix()
                 mesh.faces = processed.face_matrix()               
 
-                print("after preprocessing...")
-                print(mesh.vertices.shape)
-                print(mesh.faces.shape)
-
-            ### Save input
+            pc, _ = trimesh.sample.sample_surface(mesh, self.pc_num_pts)
+            view_id = 0            
             save_dir = self.result_name
             os.makedirs(save_dir, exist_ok=True)
-            view_id = 0            
-            # mesh.export(f'{save_dir}/input_{uid}_{view_id}.ply')                
-
-
-            pc, _ = trimesh.sample.sample_surface(mesh, self.pc_num_pts)
-
+            mesh.export(f'{save_dir}/input_{uid}_{view_id}.ply')
             if pc.shape[0] < 3:
-                print(f"[Warning] Point cloud too small ({pc.shape[0]} points). Skipping:", ply_file)
+                print(f"[Warning] Point cloud too small ({pc.shape[0]} points). Skipping: {ply_file}")
                 return None
-        result = {
-                    'uid': uid
-                }
 
-        result['pc'] = torch.tensor(pc, dtype=torch.float32)
-
+        result = {'uid': uid, 'pc': torch.tensor(pc, dtype=torch.float32)}
         if not self.is_pc:
             result['vertices'] = mesh.vertices
             result['faces'] = mesh.faces
@@ -197,13 +158,12 @@ class Demo_Dataset(torch.utils.data.Dataset):
         return result
 
     def __getitem__(self, index):
-        
         gc.collect()
-
         data = self.get_model(self.data_list[index])
         if data is None:
             return self.__getitem__((index + 1) % len(self.data_list))
         return data
+
 
 ##############
 
