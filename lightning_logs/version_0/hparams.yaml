@@ -7,7 +7,7 @@ cfg: !!python/object/new:yacs.config.CfgNode
     dataset: !!python/object/new:yacs.config.CfgNode
       dictitems:
         all_files: []
-        data_path: data/objaverse_samples
+        data_path: D:\Umich\EECS 442\project\Partfield_Extract_Features\test\Bottle/3380
         train_batch_size: 1
         train_num_workers: 8
         type: Mix
@@ -22,7 +22,7 @@ cfg: !!python/object/new:yacs.config.CfgNode
     inference_metrics_only: false
     inference_save_feat_pca: true
     inference_save_pred_sdf_to_mesh: true
-    is_pc: false
+    is_pc: true
     load_original_mesh: false
     loss: !!python/object/new:yacs.config.CfgNode
       dictitems:
@@ -36,14 +36,14 @@ cfg: !!python/object/new:yacs.config.CfgNode
         __new_allowed__: false
         __renamed_keys__: {}
     lr: 0.001
-    n_point_per_face: 1000
+    n_point_per_face: 500
     n_sample_each: 10000
     name: test
     num_neg_hard_emb: 128
     num_neg_hard_pc: 128
     num_neg_random: 256
     num_pos: 64
-    output_dir: results/test/251116-123319
+    output_dir: results\test\251204-082850
     preprocess_mesh: false
     pvcnn: !!python/object/new:yacs.config.CfgNode
       dictitems:
@@ -71,7 +71,7 @@ cfg: !!python/object/new:yacs.config.CfgNode
         __renamed_keys__: {}
     regress_2d_feat: false
     remesh_demo: false
-    result_name: partfield_features/objaverse
+    result_name: D:/Umich/EECS 442/project/Partfield_Extract_Features/output/3380
     save_every_epoch: 10
     seed: 0
     test: false

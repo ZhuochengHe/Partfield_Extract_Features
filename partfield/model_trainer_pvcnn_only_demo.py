@@ -63,6 +63,9 @@ class Model(pl.LightningModule):
                                 out_activation="GELU", 
                                 n_neurons=64, #64
                                 n_hidden_layers=6) #6
+        total_params = sum(p.numel() for p in self.parameters())
+        trainable_params = sum(p.numel() for p in self.parameters() if p.requires_grad)
+        print(f"Total params: {total_params/1e6:.2f}M, Trainable: {trainable_params/1e6:.2f}M")
 
     def predict_dataloader(self):
         if self.cfg.remesh_demo:
