@@ -1,3 +1,7 @@
+# Source
+This repository is cloned and adapted from
+[PartField](https://github.com/nv-tlabs/PartField),
+with modifications for processing the [PartSlip dataset](https://github.com/ricklentz/PartSLIP?tab=readme-ov-file) for student model learning.
 # Usage on HPC
 ## Environment
 `module load conda`
