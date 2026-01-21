@@ -1,7 +1,9 @@
 /data
 /model
-*.log
-/test
-lightning_logs/*
 /exp_results
 /dataset
+__pycache__/
+lightning_logs/*
+/test
+*.log
+*.pyc
