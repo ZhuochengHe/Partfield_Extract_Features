@@ -1,16 +1,14 @@
 #!/bin/bash
-# The interpreter used to execute the script
-# "#SBATCH" directives that convey submission options:
-#SBATCH--job-name=infere
-#SBATCH--cpus-per-task=1
-#SBATCH--nodes=1
-#SBATCH--ntasks=1
-#SBATCH--mem=16G
-#SBATCH--time=00:05:00
-#SBATCH--account=eecs442f25_class
-#SBATCH--partition=gpu_mig40,gpu,spgpu
-#SBATCH--gres=gpu:1
-#SBATCH--output=infere.log
+#SBATCH --job-name=partfield_pipeline
+#SBATCH --cpus-per-task=8
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --mem-per-cpu=16000m
+#SBATCH --time=00:10:00
+#SBATCH --account=eecs442f25_class
+#SBATCH --partition=gpu_mig40,spgpu,gpu
+#SBATCH --gres=gpu:1
+#SBATCH --output=infere.log
 source ~/.bashrc
 conda init
 conda activate partfield

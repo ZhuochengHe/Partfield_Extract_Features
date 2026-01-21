@@ -1,7 +1,9 @@
+import profile
 from partfield.config import default_argument_parser, setup
 from lightning.pytorch import seed_everything, Trainer
 from lightning.pytorch.strategies import DDPStrategy
 from lightning.pytorch.callbacks import ModelCheckpoint
+from thop import profile
 import lightning
 import torch
 import glob

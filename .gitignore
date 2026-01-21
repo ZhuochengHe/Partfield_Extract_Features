@@ -4,3 +4,4 @@
 /test
 lightning_logs/*
 /exp_results
+/dataset
